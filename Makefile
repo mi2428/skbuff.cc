@@ -8,7 +8,7 @@ COMPOSE := docker compose -f docker-compose.dev.yml
 build: ## Generate public/index.html in Docker
 	$(COMPOSE) run --rm --no-deps -T site sh -c 'npm ci && npm run build'
 
-dev: build ## Build and preview at http://localhost:8001
+dev: ## Rebuild on index.pug changes and preview at http://localhost:8001
 	$(COMPOSE) up
 
 ##@ Help

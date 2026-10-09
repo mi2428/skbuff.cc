@@ -5,6 +5,6 @@ services:
     volumes:
       - .:/site
       - /site/node_modules
-    command: node serve.mjs
+    command: sh -c 'npm ci && exec node serve.mjs'
     ports:
       - "127.0.0.1:${SKBUFF_DEV_PORT:-8001}:8000"
