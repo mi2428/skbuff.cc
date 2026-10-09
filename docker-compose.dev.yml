@@ -1,0 +1,10 @@
+services:
+  site:
+    image: node:24-bookworm
+    working_dir: /site
+    volumes:
+      - .:/site
+      - /site/node_modules
+    command: node serve.mjs
+    ports:
+      - "127.0.0.1:${SKBUFF_DEV_PORT:-8001}:8000"
